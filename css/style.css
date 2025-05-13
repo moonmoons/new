@@ -1,0 +1,45 @@
+/* style.css */
+
+body {
+  margin: 0;
+  padding-bottom: 60px; /* footer 공간 확보 */
+  font-family: 'Arial', sans-serif;
+}
+
+/* 상단 */
+header {
+  background-color: #4a90e2;
+  color: white;
+  padding: 20px;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+/* 본문 */
+main {
+  padding: 40px;
+}
+
+/* 하단 (고정) */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
