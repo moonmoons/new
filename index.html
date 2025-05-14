@@ -2,77 +2,37 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>study site</title>
+  <title>moon site</title>
+  <link rel="stylesheet" href="./css/all_style.css">
   <link rel="stylesheet" href="./css/style.css">
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script language="javascript">
-    $(document).ready(function(){
-      $("#myButton").click(function() {
-        $("#main").load("./board_2.html")
-      });
-    });
-  </script>
 </head>
-
 <body>
-<div include-html="./header.html"/>
+
+<div class="grid-container">
+  <header id="header"></header>
+  <aside id="sidebar"></aside>
+  <main id="main-content"></main>
+  <footer id="footer"></footer>
+</div>
+
 <script>
+  $(function () {
+    $("#header").load("header.html");
+    $("#sidebar").load("sidebar.html");
+    $("#footer").load("footer.html");
+    $("#main-content").load("./history/page2024.html"); // 첫 진입 시 로딩할 메인 페이지
 
-  window.addEventListener('load', function() {
-      var allElements = document.getElementsByTagName('*');
-      Array.prototype.forEach.call(allElements, function(el) {
-          var includePath = el.dataset.includePath;
-          if (includePath) {
-              var xhttp = new XMLHttpRequest();
-              xhttp.onreadystatechange = function () {
-                  if (this.readyState == 4 && this.status == 200) {
-                      el.outerHTML = this.responseText;
-                  }
-              };
-              xhttp.open('GET', includePath, true);
-              xhttp.send();
-          }
-      });
+    // 사이드바에서 페이지 이동
+    $(document).on('click', '.load-page', function (e) {
+      e.preventDefault();
+      const page = $(this).data('page');
+      $("#main-content").load(page);
+    });
   });
-
 </script>
-
-
-
-  <!--<h1>사이트</h1>-->
-<!--  <nav>
-    <a href="" id="myButton">간단한 게시판</a>
-    <a href="about.html" data-page="about">소개</a>
-    <a href="contact.html" data-page="contact">연락처</a>
-  </nav>-->
-
-
-
-
-
-
-<!--<main >
-
-
-  <h2 id="simple_board">홈</h2>
-  <p>여기는 홈페이지 메인 영역이야!</p>
-
-  &lt;!&ndash;<h2 id="about">소개</h2>
-  <p>이 사이트는 네비랑 푸터를 연습하는 HTML 예제지롱~</p>
-
-  <h2 id="services">서비스</h2>
-  <p>우리는 HTML 사랑 동아리야! ❤️</p>
-
-  <h2 id="contact">연락처</h2>
-  <p>이메일: contact@example.com</p>&ndash;&gt;
-
-</main>-->
-<div id="center">111</div>
-
-<footer id="footer">
-  <p>&copy; 2025 나의 웹사이트.</p>
-</footer>
 
 </body>
 </html>
