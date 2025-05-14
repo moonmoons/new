@@ -1,3 +1,50 @@
-간단한 게시판이야
-간단한 게시판이야
-간단한 게시판이야
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>간단한 게시판</title>
+</head>
+<body>
+<h2>간단한 게시판</h2>
+
+<div class="board-form">
+    <input type="text" id="title" placeholder="제목을 입력하세요" />
+    <textarea id="content" placeholder="내용을 입력하세요" rows="5"></textarea>
+    <button onclick="addPost()">게시하기</button>
+</div>
+
+<div id="postList"></div>
+
+<script>
+    function addPost() {
+      const title = document.getElementById("title").value.trim();
+      const content = document.getElementById("content").value.trim();
+
+      if (!title || !content) {
+        alert("제목과 내용을 모두 입력해 주세요.");
+        return;
+      }
+
+      const postList = document.getElementById("postList");
+
+      const post = document.createElement("div");
+      post.className = "post";
+
+      const postTitle = document.createElement("h2");
+      postTitle.textContent = title;
+
+      const postContent = document.createElement("p");
+      postContent.textContent = content;
+
+      post.appendChild(postTitle);
+      post.appendChild(postContent);
+
+      postList.prepend(post); // 최근 글이 위에 오도록
+
+      // 입력창 초기화
+      document.getElementById("title").value = "";
+      document.getElementById("content").value = "";
+    }
+</script>
+</body>
+</html>

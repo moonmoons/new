@@ -1,45 +1,102 @@
-/* style.css */
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+/*
+@font-face {
+    font-family: 'neon';
+    src: url('../srcs/fonts/NeonPlanetDisplay.ttf') format('truetype');
+}*/
+@font-face {
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 body {
-  margin: 0;
-  padding-bottom: 60px; /* footer 공간 확보 */
-  font-family: 'Arial', sans-serif;
-}
+      margin: 0;
+      /*font-family: sans-serif;*/
+    }
+    .grid-container {
+      display: grid;
+      grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+      grid-template-columns: 200px 1fr;
+      grid-template-rows: auto 1fr auto;
+      height: 100vh;
+    }
+    header {
+      grid-area: header;
+      background: #468eb4;
+      color: white;
+      padding: 1rem;
+      text-align: left;
+    }
+    aside {
+      grid-area: sidebar;
+      background: #f0f0f0;
+      padding: 1rem;
+    }
+    main {
+      grid-area: main;
+      padding: 1rem;
+    }
+    footer {
+      grid-area: footer;
+      background: #468eb4;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
 
-/* 상단 */
-header {
-  background-color: #4a90e2;
-  color: white;
-  padding: 20px;
-}
+    p {
+      text-align: left;
+      color: #333;
+    }
 
-nav {
-  margin-top: 10px;
-}
+    .board-form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      max-width: 520px;
+      margin-right: auto;
+    }
 
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
+    input, textarea {
+      width: 95%;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
 
-nav a:hover {
-  text-decoration: none;
-}
+    button {
+      background-color: #4682b4;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-/* 본문 */
-main {
-  padding: 40px;
-}
+    .post {
+      background: white;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 8px;
+      max-width: 500px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
 
-/* 하단 (고정) */
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
+    .post h2 {
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .post p {
+      color: #555;
+    }
