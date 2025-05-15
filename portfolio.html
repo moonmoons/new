@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>moon site</title>
+  <link rel="stylesheet" href="./css/all_style.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<div class="grid-container">
+  <header id="header"></header>
+  <aside id="sidebar"></aside>
+  <main id="main-content"></main>
+  <footer id="footer"></footer>
+</div>
+
+<script>
+  $(function () {
+    $("#header").load("header.html");
+    $("#sidebar").load("sidebar_portfolid.html");
+    $("#footer").load("footer.html");
+    $("#main-content").load("./board.html"); // 첫 진입 시 로딩할 메인 페이지
+
+    // 사이드바에서 페이지 이동
+    $(document).on('click', '.load-page', function (e) {
+      e.preventDefault();
+      const page = $(this).data('page');
+      $("#main-content").load(page);
+    });
+  });
+</script>
+
+</body>
+</html>

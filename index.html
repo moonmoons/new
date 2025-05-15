@@ -13,7 +13,7 @@
 
 <div class="grid-container">
   <header id="header"></header>
-  <aside id="sidebar"></aside>
+  <!--<aside id="sidebar"></aside>-->
   <main id="main-content"></main>
   <footer id="footer"></footer>
 </div>
@@ -21,9 +21,9 @@
 <script>
   $(function () {
     $("#header").load("header.html");
-    $("#sidebar").load("sidebar.html");
+    $("#sidebar").load("sidebar_main.html");
     $("#footer").load("footer.html");
-    $("#main-content").load("./history/page2024.html"); // 첫 진입 시 로딩할 메인 페이지
+    $("#main-content").load("./main.html"); // 첫 진입 시 로딩할 메인 페이지
 
     // 사이드바에서 페이지 이동
     $(document).on('click', '.load-page', function (e) {

@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>지원이의 메인 페이지</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <style>
+     * {
+
+          box-sizing: border-box;
+        }
+
+       .main_body {
+          background: linear-gradient(120deg, #d4fc79, #96e6a1);
+          color: #333;
+          overflow-x: hidden;
+        }
+ .hero {
+                height: 50vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 2rem;
+              }
+
+              .hero h1 {
+                font-size: 2.5rem;
+              }
+
+              .typing {
+                font-size: 1.5rem;
+                color: #222;
+                margin-top: 1rem;
+                border-right: 2px solid #222;
+                white-space: nowrap;
+                overflow: hidden;
+                width: 0;
+                animation: typing 4s steps(40, end) forwards;
+              }
+
+              @keyframes typing {
+                from { width: 0; }
+                to { width: 100%; }
+              }
+
+              .cards {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 2rem;
+                gap: 1rem;
+              }
+
+              .card {
+                background: white;
+                border-radius: 1rem;
+                padding: 1.5rem;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+                max-width: 250px;
+                opacity: 1;
+                transform: translateY(20px);
+                transition: all 0.6s ease;
+              }
+
+           <!--   .card.show {
+                opacity: 1;
+                transform: translateY(0);
+              }-->
+
+    </style>
+</head>
+<body class="main_body">
+
+<section class="hero">
+    <h1>안녕하세요. 반갑습니다.</h1>
+    <div class="typing">10년 이상의 경력을 가지고 꾸준히 공분하고 있는 개발자</div>
+</section>
+
+<section class="cards">
+    <div class="card"> 집중력 있게 열심히</div>
+    <div class="card"> 결과물은 반듯이</div>
+    <div class="card"> 책임감 있는</div>
+    <div class="card"> 동료를 존중하는</div>
+</section>
+
+<script>
+    // 스크롤 시 카드 등장
+    const cards = document.querySelectorAll('.card');
+    window.addEventListener('scroll', () => {
+      const trigger = window.innerHeight * 2.0;
+      cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if (cardTop < trigger) {
+          card.classList.add('show');
+        }
+      });
+    });
+</script>
+
+</body>
+</html>
