@@ -17,7 +17,7 @@
           color: #333;
           overflow-x: hidden;
         }
- .hero {
+       .hero {
                 height: 50vh;
                 display: flex;
                 flex-direction: column;
@@ -32,14 +32,14 @@
               }
 
               .typing {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 color: #222;
                 margin-top: 1rem;
                 border-right: 2px solid #222;
                 white-space: nowrap;
                 overflow: hidden;
                 width: 0;
-                animation: typing 4s steps(40, end) forwards;
+                animation: typing 10s steps(100, end) forwards;
               }
 
               @keyframes typing {
@@ -77,14 +77,19 @@
 
 <section class="hero">
     <h1>안녕하세요. 반갑습니다.</h1>
-    <div class="typing">10년 이상의 경력을 가지고 꾸준히 공분하고 있는 개발자</div>
+    <div class="typing">
+        10년 이상 Java 기반 웹 어플리케이션 개발 경력</br>        금융, 공공기관, 유통, 커머스, 카드사 등 다양한 도메인 경험</br>
+        Spring, Spring Boot, EJB, Oracle ADF 등 주요 프레임워크 활용 능숙</br>
+        RESTful API, ETL, 배치 개발, 하이브리드 웹, 표준/접근성 등 실무 경험 풍부</br>
+        Jira, Confluence, Git, SVN, AWS 등 협업/운영 환경 경험</br>
+    </div>
 </section>
 
 <section class="cards">
-    <div class="card"> 집중력 있게 열심히</div>
-    <div class="card"> 결과물은 반듯이</div>
-    <div class="card"> 책임감 있는</div>
-    <div class="card"> 동료를 존중하는</div>
+    <div class="card"> Backend:</br>Java, JSP, Spring, Spring Boot, EJB, Oracle ADF, Shell Script, .RESTful API</div>
+    <div class="card"> Frontend:</br>JavaScript, jQuery, HTML5, Thymeleaf, Websquare, TrustForm</div>
+    <div class="card"> Database:</br>Oracle, MySQL, Tibero, MSSQL</div>
+    <div class="card"> Tool/Infra:</br>Git, SVN, Jira, Confluence, AWS EC2, Clip Report, PowerBuilder</div>
 </section>
 
 <script>
