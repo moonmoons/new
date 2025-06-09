@@ -10,12 +10,36 @@
 </head>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+
+
+    const buttons = document.querySelectorAll('.nav-button');
+    alert('buttons len::=='+buttons.length);
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            // 모든 버튼에서 active 클래스 제거
+            buttons.forEach(btn => btn.classList.remove('active'));
+            // 클릭한 버튼에만 active 클래스 추가
+            button.classList.add('active');
+        });`
+    });
+
+
+</script>
+
+
 <nav class="navbar">
     <div class="logo"><a href="./index.html">MySite</a></div>
     <ul>
-        <li><a href="./index.html">홈</a></li>
+      <!--  <li><a href="./index.html">홈</a></li>
         <li><a href="./portfolio.html">포트폴리오</a></li>
-        <li><a href="./history.html">이력정보</a></li>
+        <li><a href="./history.html">이력정보</a></li>-->
+
+        <button class="nav-button active" id="nav_home" onclick="page_change();">Home</button>
+        <button class="nav-button" id="nav_portfolio" onclick="page_change();">포트폴리오</button>
+        <button class="nav-button" id="nav_history" onclick="page_change();">이력정보</button>
        <!-- <li><a href="./favorite.html">즐겨찾기</a></li>-->
     </ul>
 </nav>

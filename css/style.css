@@ -1,15 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+/*Roboto 폰트는 다양한 굵기를 지원*/
+@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff');
 /*
 @font-face {
     font-family: 'neon';
     src: url('../srcs/fonts/NeonPlanetDisplay.ttf') format('truetype');
 }*/
-@font-face {
+
+* {
+  font-family: 'SDSamliphopangche_Outline';
+}
+/*@font-face {
     font-family: 'SDSamliphopangche_Outline';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
+}*/
 
 :root {
   --bg-color: white;
@@ -38,6 +44,15 @@ body {
     grid-template-rows: auto 1fr auto;
     height: 100vh;
 }
+
+.grid-container.hide-sidebar {
+  grid-template-areas:
+    "header header"
+    "main main"
+    "footer footer";
+  grid-template-columns: 0 1fr;
+}
+
 header {
     grid-area: header;
     background: #333;
@@ -180,4 +195,22 @@ button {
         width: 100%;
         padding: 0.5rem 0;
     }
+}
+
+pre {
+    font-size: 16px;
+}
+
+.nav-button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.nav-button.active {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
 }
